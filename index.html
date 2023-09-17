@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+uniform vec2 playerPos;
+attribute vec4 vPosition;
+
+
+void main()
+{
+    vec4 t = vPosition;
+    
+    t.xy += (playerPos/10.0);
+    
+    gl_Position = t;
+}
+</script>
+
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+uniform vec4 fColor;
+void
+main()
+{
+    gl_FragColor = fColor;
+}
+</script>
+
+<script id="enemy-vertex-shader" type="x-shader/x-vertex">
+
+    uniform vec2 enemyPos;
+    attribute vec4 vEnemyPosition;
+   
+    
+    void main()
+    {
+        vec4 t = vEnemyPosition;
+        
+        t.xy += (enemyPos/10.0);
+        
+        gl_Position = t;
+    }
+</script>
+
+<script id="enemy-fragment-shader" type="x-shader/x-fragment">
+
+    precision mediump float;
+    
+    uniform vec4 eColor;
+    void
+    main()
+    {
+        gl_FragColor = eColor;
+    }
+</script>
+
+
+<script id="lane-vertex-shader" type="x-shader/x-vertex">
+
+    uniform vec2 lanePos;
+    attribute vec4 lanePosition;
+  
+    
+    void main()
+    {
+        vec4 t = lanePosition;
+        
+        t.xy += (lanePos/10.0);
+        
+        gl_Position = t;
+    }
+</script>
+
+<script id="lane-fragment-shader" type="x-shader/x-fragment">
+
+    precision mediump float;
+    
+    uniform vec4 lColor;
+    void
+    main()
+    {
+        gl_FragColor = lColor;
+    }
+</script>
+
+
+<script id="tally-vertex-shader" type="x-shader/x-vertex">
+
+    uniform vec2 tallyPos;
+    attribute vec4 tallyPosition;
+  
+    
+    void main()
+    {
+        vec4 t = tallyPosition;
+        
+        t.xy += (tallyPos/10.0);
+        
+        gl_Position = t;
+    }
+</script>
+
+<script id="tally-fragment-shader" type="x-shader/x-fragment">
+
+    precision mediump float;
+    
+    uniform vec4 tColor;
+    void
+    main()
+    {
+        gl_FragColor = tColor;
+    }
+</script>
+
+
+<script id="error-vertex-shader" type="x-shader/x-vertex">
+
+    uniform vec2 errorPos;
+    attribute vec4 vErrorPosition;
+   
+    
+    void main()
+    {
+        vec4 t = vErrorPosition;
+        
+        t.xy += (errorPos/10.0);
+        
+        gl_Position = t;
+    }
+</script>
+
+<script id="error-fragment-shader" type="x-shader/x-fragment">
+
+    precision mediump float;
+    
+    uniform vec4 eColor;
+    void
+    main()
+    {
+        gl_FragColor = eColor;
+    }
+</script>
+
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="frogger.js"></script>
+
+<body>
+<canvas id="gl-canvas" width="512" height="512"></canvas>
+</body>
+</html>
